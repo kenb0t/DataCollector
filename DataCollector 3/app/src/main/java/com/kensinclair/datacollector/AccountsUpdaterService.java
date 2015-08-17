@@ -34,8 +34,8 @@ public class AccountsUpdaterService extends    UpdaterService
     private static final boolean LOCAL_LOGV = false;
     private static final String  TAG        = AccountsUpdaterService.class.getSimpleName();
 
-    protected AccountManager mAccountManager;
-    private   DbUpdater      mDbUpdater;
+    private AccountManager mAccountManager;
+    private DbUpdater      mDbUpdater;
 
     /**
      * Starts sticky service and assigns itself as a
@@ -57,7 +57,7 @@ public class AccountsUpdaterService extends    UpdaterService
             if(LOCAL_LOGD) sLg.log("Setting up accountManager.");
             mAccountManager = AccountManager.get(this);
             mAccountManager.addOnAccountsUpdatedListener(this, null, true);
-            if(LOCAL_LOGD) sLg.log("Account manager setup w listener " + toString() + ".");
+            if(LOCAL_LOGD) sLg.log("Account manager setup with listener " + toString() + ".");
         } catch (Exception e) {
             Log.e(TAG, "Error setting up accounts listener: " + e.getMessage());
             e.printStackTrace();

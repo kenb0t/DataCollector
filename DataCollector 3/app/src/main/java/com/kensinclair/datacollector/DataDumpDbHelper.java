@@ -34,8 +34,8 @@ public class DataDumpDbHelper extends SQLiteOpenHelper {
     private static final boolean LOCAL_LOGD = true;
     private static final String  TAG = DataDumpDbHelper.class.getSimpleName();
 
-    public static final String DATABASE_NAME    = "DataHarvest.db";
-    public static final int    DATABASE_VERSION = 3;
+    static final String     DATABASE_NAME    = "DataHarvest.db";
+    public static final int DATABASE_VERSION = 3;
 
     private static final String BOOLEAN_TYPE = " INTEGER";
     private static final String CT           = "CREATE TABLE ";

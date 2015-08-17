@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
     /**
      * Saves the database to a directory the user can access.
      * Called when "Export" button is clicked.
-     * */
+     */
     private void saveDb() {
         if(LOCAL_LOGV) sLg.log("Saving database.");
 
@@ -133,7 +133,7 @@ public class MainActivity extends Activity {
             if(LOCAL_LOGV) sLg.log(outputF.getPath());
 
         } catch (IOException e) {
-            String errorText = "Error creating " + outputF.getPath() + ".";
+            String errorText = "Error creating " + outputF.getPath() + ": " + e.getMessage() + ".";
             Log.e(TAG, errorText);
             e.printStackTrace();
         }

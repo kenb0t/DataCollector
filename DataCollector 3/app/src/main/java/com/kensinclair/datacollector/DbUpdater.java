@@ -57,7 +57,7 @@ public class DbUpdater {
      *
      * @param c the context of the caller
      */
-    public DbUpdater(Context c) { mContext = c; }
+    DbUpdater(Context c) { mContext = c; }
 
     /**
      * Updates the accounts table.
@@ -67,7 +67,7 @@ public class DbUpdater {
      * @return         <code>true</code> if the database update
      *                 was successful; <code>false</code> otherwise
      */
-    boolean updateTable(Account[] accounts, long time) {
+    protected boolean updateTable(Account[] accounts, long time) {
         boolean       retVal    = true;
         ContentValues row;
         CharSequence  timestamp = createTimestamp(time);
@@ -93,7 +93,7 @@ public class DbUpdater {
      * @return         the row ID of the newly inserted row,
      *                 or -1 if an error occurred
      */
-    long updateTable(Location location, long time) {
+    protected long updateTable(Location location, long time) {
         CharSequence timestamp = createTimestamp(time);
 
         ContentValues row = createRow(location, timestamp);
@@ -111,7 +111,7 @@ public class DbUpdater {
      * @return        the row ID of the newly inserted row,
      *                or -1 if an error occurred
      */
-    long updateTable(NetworkInfo netInfo, long time) {
+    protected long updateTable(NetworkInfo netInfo, long time) {
         CharSequence  timestamp = createTimestamp(time);
 
         ContentValues row = createRow(netInfo, timestamp);
@@ -129,7 +129,7 @@ public class DbUpdater {
      * @return         the row ID of the newly inserted row,
      *                 or -1 if an error occurred
      */
-    long updateTable(WifiInfo wifiInfo, long time) {
+    protected long updateTable(WifiInfo wifiInfo, long time) {
         CharSequence timestamp = createTimestamp(time);
 
         ContentValues row = createRow(wifiInfo, timestamp);
@@ -148,7 +148,7 @@ public class DbUpdater {
      * @return            <code>true</code> if the database update
      *                    was successful; <code>false</code> otherwise
      */
-    boolean updateTable(List<ScanResult> scanResults, long time) {
+    protected boolean updateTable(List<ScanResult> scanResults, long time) {
         Iterator<ScanResult> it        = scanResults.iterator();
         boolean              retVal    = true;
         ContentValues        row;
@@ -175,7 +175,7 @@ public class DbUpdater {
      * @param time the time to be formatted
      * @return     the formatted time
      */
-    protected CharSequence createTimestamp(long time) {
+    private CharSequence createTimestamp(long time) {
         return DateFormat.format(DATE_FORMAT, time);
     }
 

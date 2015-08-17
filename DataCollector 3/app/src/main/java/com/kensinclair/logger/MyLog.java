@@ -26,7 +26,7 @@ public class MyLog {
     private static boolean LOCAL_LOGD = true;
     private static String  TAG        = "MyLog";
 
-    protected static final String DEFAULT_TAG = "NO TAG";
+    private static final String DEFAULT_TAG = "NO TAG";
 
     private int    mLevel;
     private String mTag;
@@ -37,7 +37,7 @@ public class MyLog {
      */
     public MyLog() {
         mLevel = Log.VERBOSE;
-        mTag = DEFAULT_TAG;
+        mTag   = DEFAULT_TAG;
     }
 
     /**

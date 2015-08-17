@@ -79,7 +79,7 @@ public class NetworkReceiver extends BroadcastReceiver {
      * @return             <code>true</code> if the database was successfully updated;
      *                     <code>false</code> otherwise
      */
-    private boolean onReceiveWifiAction(WifiManager wifiManager,
+    protected boolean onReceiveWifiAction(WifiManager wifiManager,
                                         String      intentAction,
                                         long        time,
                                         DbUpdater   dbUpdater) {
