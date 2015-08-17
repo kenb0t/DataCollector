@@ -67,7 +67,6 @@ public class AccountsUpdaterService extends    UpdaterService
 
         return START_STICKY;
     }
-    //changes!!
 
     /**
      * Calls database updater.
